@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private float x_input;
+    private CharacterController controller;
+
+    [SerializeField]
+    private float mouseSens;
+
+    private void Awake()
     {
-        
+        controller = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        MovingHandle();
+        InputHandle();
+    }
+
+
+    private void InputHandle()
+    {
+        x_input = Input.GetAxis("Horizontal");
+    }
+
+
+    private void MovingHandle()
+    {
+        controller.Move(new Vector3(x_input, 0, 0) * Time.deltaTime * mouseSens);
     }
 }
