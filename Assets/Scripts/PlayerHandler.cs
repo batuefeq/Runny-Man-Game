@@ -6,7 +6,7 @@ public class PlayerHandler : MonoBehaviour
     private CharacterController controller;
 
     [SerializeField]
-    private float mouseSens;
+    private float playerSpeed;
 
     private void Awake()
     {
@@ -16,19 +16,36 @@ public class PlayerHandler : MonoBehaviour
 
     void Update()
     {
-        MovingHandle();
-        InputHandle();
+        InputAndMovementHandle();
     }
 
 
-    private void InputHandle()
+    private void InputAndMovementHandle()
     {
-        x_input = Input.GetAxis("Horizontal");
-    }
+        if (DeviceTypeHandler.TypeFinder()) // on mobile device!
+        {
+            print("yes this is");
+            foreach (Touch touch in Input.touches)  // take touches
+            {
+                if (touch.phase == TouchPhase.Began) // if touch just began
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(touch.position); // took the ray whether do smthn !
+                    if (touch.position.x <= Screen.width / 2)
+                    {
+                        controller.Move(Vector3.left * Time.deltaTime * playerSpeed); // if left side of the screen move to left
+                    }
+                    else
+                    {
+                        controller.Move(Vector3.right * Time.deltaTime * playerSpeed); // otherwise move to right !
+                    }
 
-
-    private void MovingHandle()
-    {
-        controller.Move(new Vector3(x_input, 0, 0) * Time.deltaTime * mouseSens);
+                }             
+            }          
+        }
+        else // if not mobile device!
+        {
+            x_input = Input.GetAxis("Horizontal"); // interpolating through keyboard to make it smooth.(why getaxis?)
+            controller.Move(new Vector3(x_input, 0, 0) * Time.deltaTime * playerSpeed);
+        }     
     }
 }
