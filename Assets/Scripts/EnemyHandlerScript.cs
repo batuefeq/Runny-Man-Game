@@ -23,6 +23,7 @@ public class EnemyHandlerScript : MonoBehaviour
     }
   
     void Update()
-    {        
+    {       
+        
     }
 }

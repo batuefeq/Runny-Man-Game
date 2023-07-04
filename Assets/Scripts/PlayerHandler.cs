@@ -8,19 +8,27 @@ public class PlayerHandler : MonoBehaviour
     private CharacterController controller;
 
     [SerializeField]
-    private float playerSpeed;
+    private float sensitivity;
 
+
+    private float playerSpeed;
+    public float PlayerSpeed
+    {
+        get
+        {
+            return playerSpeed;
+        }
+        set
+        {
+            playerSpeed = value;
+        }
+    }
 
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-    }
-
-
-    void Update()
-    {
-        InputAndMovementHandle();
+        PlayerSpeed = 10f;
     }
 
 
@@ -32,7 +40,7 @@ public class PlayerHandler : MonoBehaviour
     }
 
 
-    private void InputAndMovementHandle()
+    private void MobileMovementHandle()
     {
 
         foreach (Touch touch in Input.touches)  // take touches
@@ -42,20 +50,29 @@ public class PlayerHandler : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(touch.position); // took the ray and maybe do smthn !
                 if (touch.position.x <= Screen.width / 2)
                 {
-                    controller.Move(Vector3.left * Time.deltaTime * playerSpeed); // if left side of the screen move to left
+                    controller.Move(new Vector3(Vector3.left.x * sensitivity, 0, playerSpeed) * Time.deltaTime); // if left side of the screen move to left
+                    print("left");
                 }
                 else
                 {
-                    controller.Move(Vector3.right * Time.deltaTime * playerSpeed); // otherwise move to right !
+                    controller.Move(new Vector3(Vector3.right.x * sensitivity, 0, playerSpeed) * Time.deltaTime); // otherwise move to right !
+                    print("right");
                 }
-
             }
         }
-        controller.Move(new Vector3(x_input, 0, 0) * Time.deltaTime * playerSpeed);
+
+        controller.Move(new Vector3(x_input * sensitivity, 0, playerSpeed) * Time.deltaTime);
     }
 
 
+    private void PlayerMover()
+    {
+        
+    }
 
 
-
+    void Update()
+    {
+        MobileMovementHandle();
+    }
 }
