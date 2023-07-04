@@ -11,8 +11,8 @@ public class PlayerHandler : MonoBehaviour
     private float sensitivity;
 
 
-    private float playerSpeed;
-    public float PlayerSpeed
+    private int playerSpeed;
+    public int PlayerSpeed
     {
         get
         {
@@ -20,7 +20,7 @@ public class PlayerHandler : MonoBehaviour
         }
         set
         {
-            playerSpeed = value;
+            playerSpeed += value;
         }
     }
 
@@ -28,7 +28,7 @@ public class PlayerHandler : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        PlayerSpeed = 10f;
+        PlayerSpeed = 1;
     }
 
 
@@ -64,6 +64,9 @@ public class PlayerHandler : MonoBehaviour
         controller.Move(new Vector3(x_input * sensitivity, 0, playerSpeed) * Time.deltaTime);
     }
 
+
+
+   
 
     private void PlayerMover()
     {

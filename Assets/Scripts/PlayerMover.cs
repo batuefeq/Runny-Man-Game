@@ -1,25 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
-    private CharacterController controller;
+    [SerializeField]
+    private GainScriptableObject speedOptions;
 
+    private PlayerHandler playerHandler;
 
     void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        playerHandler = GetComponent<PlayerHandler>();
     }
 
 
     private void AutoMove()
     {
-
+        print(playerHandler.PlayerSpeed);
     }
-    
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            playerHandler.PlayerSpeed = speedOptions.enemySpeedGain;
+            print(playerHandler.PlayerSpeed);
+        }
+        else if (other.CompareTag("Obstacle"))
+        {
+            playerHandler.PlayerSpeed = speedOptions.obstacleSpeedGain;
+            print(playerHandler.PlayerSpeed);
+        }
+    }
+
+
     void Update()
     {
-        
+        AutoMove();
     }
 }

@@ -16,10 +16,7 @@ public class EnemyHandlerScript : MonoBehaviour
 
     private IEnumerator GameobjectSpawner()
     {
-        print("inside");
-        Instantiate(enemy);
         yield return new WaitForSeconds(3f);
-        print("outside");
     }
   
     void Update()
