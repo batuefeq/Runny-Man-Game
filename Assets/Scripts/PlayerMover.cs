@@ -15,7 +15,6 @@ public class PlayerMover : MonoBehaviour
 
     private void AutoMove()
     {
-        print(playerHandler.PlayerSpeed);
     }
 
 
@@ -24,12 +23,10 @@ public class PlayerMover : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             playerHandler.PlayerSpeed = speedOptions.enemySpeedGain;
-            print(playerHandler.PlayerSpeed);
         }
         else if (other.CompareTag("Obstacle"))
         {
             playerHandler.PlayerSpeed = speedOptions.obstacleSpeedGain;
-            print(playerHandler.PlayerSpeed);
         }
     }
 

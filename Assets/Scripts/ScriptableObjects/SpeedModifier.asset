@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4f94855871eb848bfc852ac24c45f9, type: 3}
   m_Name: SpeedModifier
   m_EditorClassIdentifier: 
-  enemySpeedGain: 10
-  obstacleSpeedGain: 2
-  enemySpeedLose: 20
+  enemySpeedGain: 20
+  obstacleSpeedGain: 1
+  enemySpeedLose: 3
   obstacleSpeedLose: 5
-  baloonSpeedLose: 15
-  baloonSpeedGain: 4
+  baloonSpeedLose: 1
+  baloonSpeedGain: 15

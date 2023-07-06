@@ -9,6 +9,7 @@ public class GainScriptableObject : ScriptableObject
     public int obstacleSpeedLose;
     public int baloonSpeedLose;
     public int baloonSpeedGain;
+    
 
 
     private void OnEnable()
