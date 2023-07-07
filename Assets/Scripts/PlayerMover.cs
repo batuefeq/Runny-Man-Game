@@ -13,9 +13,6 @@ public class PlayerMover : MonoBehaviour
     }
 
 
-    private void AutoMove()
-    {
-    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -31,8 +28,23 @@ public class PlayerMover : MonoBehaviour
     }
 
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("Enemy"))
+        {
+            playerHandler.PlayerSpeed = speedOptions.enemySpeedLose;
+            Destroy(hit.gameObject);
+        }
+        else if (hit.gameObject.CompareTag("Obstacle"))
+        {
+            playerHandler.PlayerSpeed = speedOptions.obstacleSpeedLose;
+            Destroy(hit.gameObject);
+        }
+    }
+
+
     void Update()
     {
-        AutoMove();
+
     }
 }

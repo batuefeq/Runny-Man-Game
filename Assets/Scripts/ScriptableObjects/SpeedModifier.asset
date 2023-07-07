@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeedGain: 20
   obstacleSpeedGain: 1
-  enemySpeedLose: 3
-  obstacleSpeedLose: 5
-  baloonSpeedLose: 1
-  baloonSpeedGain: 15
+  enemySpeedLose: -3
+  obstacleSpeedLose: -5
+  baloonSpeedLose: -19
+  baloonSpeedGain: 10

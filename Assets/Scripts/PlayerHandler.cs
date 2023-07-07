@@ -16,11 +16,21 @@ public class PlayerHandler : MonoBehaviour
     {
         get
         {
-            return playerSpeed;
+            if (playerSpeed >= 0)
+            {
+                return playerSpeed;
+            }
+            else
+            {
+                return 0;
+            }            
         }
         set
         {
-            playerSpeed += value;
+            if (playerSpeed >= 0)
+            {
+                playerSpeed += value;
+            }         
         }
     }
 
