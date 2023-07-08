@@ -75,15 +75,6 @@ public class PlayerHandler : MonoBehaviour
     }
 
 
-
-   
-
-    private void PlayerMover()
-    {
-        
-    }
-
-
     void Update()
     {
         MobileMovementHandle();

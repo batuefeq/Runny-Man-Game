@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
@@ -29,21 +27,8 @@ public class CameraHandler : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {      
-        Destroy(other.gameObject);       
-    }
-
-
-    private void CameraObjectKiller()
-    {
-        
-    }
-
-
     void Update()
     {
         CameraSpeedHandler();
-        print("cameraSpeedHandler");
     }
 }
