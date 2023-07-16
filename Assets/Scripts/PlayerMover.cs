@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
+    // in this script i adjust the speed of the player according to the actions of the player.
+
     [SerializeField]
     private GainScriptableObject speedOptions;
 
@@ -11,8 +13,6 @@ public class PlayerMover : MonoBehaviour
     {
         playerHandler = GetComponent<PlayerHandler>();
     }
-
-
 
 
     private void OnTriggerEnter(Collider other)

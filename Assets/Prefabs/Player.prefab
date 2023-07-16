@@ -1039,7 +1039,6 @@ GameObject:
   - component: {fileID: 7077802820593037989}
   - component: {fileID: 7910814233140113377}
   - component: {fileID: 1571675678754489897}
-  - component: {fileID: 4473316700294192927}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1054,7 +1053,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4208280889844399463}
-  m_LocalRotation: {x: 0.21123943, y: -0, z: -0, w: 0.97743434}
+  m_LocalRotation: {x: 0.2845173, y: 0, z: 0, w: 0.9586709}
   m_LocalPosition: {x: -0.04, y: 4.1, z: -5.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1195,19 +1194,6 @@ MonoBehaviour:
   camPlaceSlow: {fileID: 4820584383958474783}
   camPlaceNorm: {fileID: 6582430288529915656}
   camPlaceFast: {fileID: 92462818916544890}
---- !u!65 &4473316700294192927
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4208280889844399463}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.38615, y: 9.500038, z: 0.03238541}
-  m_Center: {x: -1.2541599, y: -4.250228, z: -0.48378894}
 --- !u!1 &4264659357611189756
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class PlayerHandler : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        PlayerSpeed = 1;
+        PlayerSpeed = 5;
     }
 
 
